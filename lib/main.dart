@@ -18,12 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith(
-        textTheme: TextTheme(
-          bodyText2: TextStyle(color: Colors.black54),
-          
-        ),
-      ),
+      
 
 initialRoute: WelcomeScreen.id,
   routes: {
@@ -31,9 +26,9 @@ initialRoute: WelcomeScreen.id,
     WelcomeScreen.id: (context) => WelcomeScreen(),
     // When navigating to the "/second" route, build the SecondScreen widget.
     LoginScreen.id: (context) => LoginScreen(),
-     RegistrationScreen.id: (context) =>  RegistrationScreen(),
     // When navigating to the "/second" route, build the SecondScreen widget.
          Admin.id: (context) =>  Admin(),
+         FormScreen.id: (context) =>  FormScreen(),
 
   },    
   );

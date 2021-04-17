@@ -1,12 +1,11 @@
-// import 'package:employee_byte/screens/admin.dart';
 import 'package:employee_byte/screens/login_screen.dart';
 import 'package:flutter/material.dart';
-// import 'admin.dart';
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:employee_byte/components/rounded_button.dart';
 import 'login_screen.dart';
 import 'registration_screen.dart';
+
 
 class WelcomeScreen extends StatefulWidget {
   static const String id = 'welcome_screen';
@@ -52,12 +51,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               onpress: () {
                 Navigator.pushNamed(context, LoginScreen.id);
               },
-              buttonTitle: 'Log in',
+              buttonTitle: 'Log in', 
             ),
             RoundedButton(
               color: Colors.blueAccent,
               onpress: () {
-                Navigator.pushNamed(context, RegistrationScreen.id);
+                Navigator.pushNamed(context, FormScreen.id);
               },
               buttonTitle: 'Create Account',
             ),
