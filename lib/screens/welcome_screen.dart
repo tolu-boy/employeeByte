@@ -1,9 +1,13 @@
+// import 'package:employee_byte/screens/admin.dart';
+import 'package:employee_byte/screens/login_screen.dart';
 import 'package:flutter/material.dart';
+// import 'admin.dart';
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:employee_byte/components/rounded_button.dart';
 import 'login_screen.dart';
 import 'registration_screen.dart';
+
 class WelcomeScreen extends StatefulWidget {
   static const String id = 'welcome_screen';
   @override
@@ -32,7 +36,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 ),
                 TyperAnimatedTextKit(
                   text: ['Employee Byte'],
-                    speed: Duration(milliseconds: 500),
+                  speed: Duration(milliseconds: 500),
                   textStyle: TextStyle(
                     fontSize: 35.0,
                     fontWeight: FontWeight.w900,
@@ -46,7 +50,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             RoundedButton(
               color: Colors.lightBlueAccent,
               onpress: () {
-            Navigator.pushNamed(context, LoginScreen.id);
+                Navigator.pushNamed(context, LoginScreen.id);
               },
               buttonTitle: 'Log in',
             ),
@@ -63,6 +67,3 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     );
   }
 }
-
-
-
