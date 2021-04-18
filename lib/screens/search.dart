@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 class SearchUser extends StatefulWidget {
-    static const String id = 'search_screen';
+  static const String id = 'search_screen';
 
   @override
   _SearchUserState createState() => _SearchUserState();
 }
 
 class _SearchUserState extends State<SearchUser> {
-    TextEditingController editingController = TextEditingController();
+  TextEditingController editingController = TextEditingController();
 
- Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
         title: new Text('Search Employees'),
@@ -21,9 +21,7 @@ class _SearchUserState extends State<SearchUser> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
-                onChanged: (value) {
-                  
-                },
+                onChanged: (value) {},
                 controller: editingController,
                 decoration: InputDecoration(
                     labelText: "Search",
@@ -33,18 +31,6 @@ class _SearchUserState extends State<SearchUser> {
                         borderRadius: BorderRadius.all(Radius.circular(25.0)))),
               ),
             ),
-            // Expanded(
-            //   child: ListView.builder(
-            //     shrinkWrap: true,
-            //     itemCount: items.length,
-            //     itemBuilder: (context, index) {
-            //       return ListTile(
-            //         title: Text('${items[index]}'),
-            //       );
-            //     },
-            //   ),
-            // ),
-          
           ],
         ),
       ),

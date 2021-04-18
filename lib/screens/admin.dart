@@ -2,9 +2,6 @@ import 'package:employee_byte/screens/createUser.dart';
 import 'package:employee_byte/screens/search.dart';
 import 'package:employee_byte/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
-// import 'package:employee_byte/components/rounded_button.dart';
-// import 'package:employee_byte/constants.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
 
 class Admin extends StatefulWidget {
   static const String id = 'admin_screen';
@@ -98,7 +95,7 @@ class _AdminState extends State<Admin> {
                       onTap: () {
                         Navigator.pushNamed(context, WelcomeScreen.id);
                       },
-                                          child: _buildSingleContainer(
+                      child: _buildSingleContainer(
                           context: context,
                           count: '',
                           icon: Icons.logout,

@@ -6,7 +6,6 @@ import 'package:employee_byte/components/rounded_button.dart';
 import 'login_screen.dart';
 import 'registration_screen.dart';
 
-
 class WelcomeScreen extends StatefulWidget {
   static const String id = 'welcome_screen';
   @override
@@ -51,7 +50,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               onpress: () {
                 Navigator.pushNamed(context, LoginScreen.id);
               },
-              buttonTitle: 'Log in', 
+              buttonTitle: 'Log in',
             ),
             RoundedButton(
               color: Colors.blueAccent,

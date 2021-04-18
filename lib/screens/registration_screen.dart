@@ -24,7 +24,6 @@ class FormScreenState extends State<FormScreen> {
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-  
   Widget buildFirstName() {
     return TextFormField(
       decoration: InputDecoration(labelText: 'FirstName'),
@@ -166,7 +165,7 @@ class FormScreenState extends State<FormScreen> {
 
   Widget buildCountry() {
     return DropdownButton<String>(
-                  hint: Text('Please choose a Country'), // Not necessary for Option 1
+      hint: Text('Please choose a Country'), // Not necessary for Option 1
 
       items: <String>['A', 'B', 'C', 'D'].map((String value) {
         return new DropdownMenuItem<String>(
@@ -193,8 +192,7 @@ class FormScreenState extends State<FormScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return 
-    Scaffold(
+    return Scaffold(
       appBar: AppBar(title: Text("Registration")),
       body: SingleChildScrollView(
         child: Container(
@@ -248,7 +246,5 @@ class FormScreenState extends State<FormScreen> {
         ),
       ),
     );
-  
-  
   }
 }

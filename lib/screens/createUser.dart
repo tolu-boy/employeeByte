@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 
-
-
 class CreateUser extends StatefulWidget {
-    static const String id = 'createUser_screen';
+  static const String id = 'createUser_screen';
 
   @override
   _CreateUserState createState() => _CreateUserState();
 }
 
 class _CreateUserState extends State<CreateUser> {
-
-   String firstname;
+  String firstname;
   String lastname;
   String gender;
   String dob;
@@ -22,7 +19,6 @@ class _CreateUserState extends State<CreateUser> {
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-  
   Widget buildFirstName() {
     return TextFormField(
       decoration: InputDecoration(labelText: 'FirstName'),
@@ -56,9 +52,6 @@ class _CreateUserState extends State<CreateUser> {
       },
     );
   }
-
-  
- 
 
   Widget buildGender() {
     return TextFormField(
@@ -128,7 +121,7 @@ class _CreateUserState extends State<CreateUser> {
 
   Widget buildCountry() {
     return DropdownButton<String>(
-                  hint: Text('Please choose a Country'), // Not necessary for Option 1
+      hint: Text('Please choose a Country'), // Not necessary for Option 1
 
       items: <String>['A', 'B', 'C', 'D'].map((String value) {
         return new DropdownMenuItem<String>(
@@ -152,9 +145,10 @@ class _CreateUserState extends State<CreateUser> {
       onChanged: (_) {},
     );
   }
+
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(title: Text("create Employee")),
       body: SingleChildScrollView(
         child: Container(
@@ -166,7 +160,6 @@ class _CreateUserState extends State<CreateUser> {
               children: <Widget>[
                 buildFirstName(),
                 buildLastName(),
-                
                 buildGender(),
                 builDob(),
                 buildPhoto(),
@@ -186,15 +179,6 @@ class _CreateUserState extends State<CreateUser> {
 
                     formKey.currentState.save();
 
-                    print(firstname);
-                    print(lastname);
-                   
-                    print(gender);
-                    print(dob);
-                    print(photo);
-                    print(address);
-                    print(country);
-                    print(state);
                     // Navigator.pushNamed(context, Admin.id);
 
                     //Send to API
@@ -206,7 +190,5 @@ class _CreateUserState extends State<CreateUser> {
         ),
       ),
     );
-  
-  
   }
 }
