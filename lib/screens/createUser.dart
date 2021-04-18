@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:employee_byte/screens/admin.dart';
 
-class FormScreen extends StatefulWidget {
-  static const String id = 'reg_screen';
+
+
+class CreateUser extends StatefulWidget {
+    static const String id = 'createUser_screen';
 
   @override
-  State<StatefulWidget> createState() {
-    return FormScreenState();
-  }
+  _CreateUserState createState() => _CreateUserState();
 }
 
-class FormScreenState extends State<FormScreen> {
-  String firstname;
+class _CreateUserState extends State<CreateUser> {
+
+   String firstname;
   String lastname;
-  String email;
-  String password;
   String gender;
   String dob;
   String photo;
@@ -59,44 +57,8 @@ class FormScreenState extends State<FormScreen> {
     );
   }
 
-  Widget buildEmail() {
-    return TextFormField(
-      decoration: InputDecoration(labelText: 'Email'),
-      validator: (String value) {
-        if (value.isEmpty) {
-          return 'Email is Required';
-        }
-
-        if (!RegExp(
-                r"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
-            .hasMatch(value)) {
-          return 'Please enter a valid email Address';
-        }
-
-        return null;
-      },
-      onSaved: (String value) {
-        email = value;
-      },
-    );
-  }
-
-  Widget buildpassword() {
-    return TextFormField(
-      decoration: InputDecoration(labelText: 'password'),
-      keyboardType: TextInputType.visiblePassword,
-      validator: (String value) {
-        if (value.isEmpty) {
-          return 'gender is Required';
-        }
-
-        return null;
-      },
-      onSaved: (String value) {
-        gender = value;
-      },
-    );
-  }
+  
+ 
 
   Widget buildGender() {
     return TextFormField(
@@ -190,12 +152,10 @@ class FormScreenState extends State<FormScreen> {
       onChanged: (_) {},
     );
   }
-
   @override
   Widget build(BuildContext context) {
-    return 
-    Scaffold(
-      appBar: AppBar(title: Text("Registration")),
+    return  Scaffold(
+      appBar: AppBar(title: Text("create Employee")),
       body: SingleChildScrollView(
         child: Container(
           margin: EdgeInsets.all(24),
@@ -206,8 +166,7 @@ class FormScreenState extends State<FormScreen> {
               children: <Widget>[
                 buildFirstName(),
                 buildLastName(),
-                buildEmail(),
-                buildpassword(),
+                
                 buildGender(),
                 builDob(),
                 buildPhoto(),
@@ -229,15 +188,14 @@ class FormScreenState extends State<FormScreen> {
 
                     print(firstname);
                     print(lastname);
-                    print(email);
-                    print(password);
+                   
                     print(gender);
                     print(dob);
                     print(photo);
                     print(address);
                     print(country);
                     print(state);
-                    Navigator.pushNamed(context, Admin.id);
+                    // Navigator.pushNamed(context, Admin.id);
 
                     //Send to API
                   },

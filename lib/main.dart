@@ -1,9 +1,12 @@
 import 'package:employee_byte/screens/admin.dart';
+import 'package:employee_byte/screens/createUser.dart';
 import 'package:flutter/material.dart';
 import 'screens/welcome_screen.dart';
 import 'screens/login_screen.dart';
 import 'screens/registration_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'screens/createUser.dart';
+import 'screens/search.dart';
 
 
 void main() async {   
@@ -22,13 +25,12 @@ class MyApp extends StatelessWidget {
 
 initialRoute: WelcomeScreen.id,
   routes: {
-    // When navigating to the "/" route, build the FirstScreen widget.
     WelcomeScreen.id: (context) => WelcomeScreen(),
-    // When navigating to the "/second" route, build the SecondScreen widget.
     LoginScreen.id: (context) => LoginScreen(),
-    // When navigating to the "/second" route, build the SecondScreen widget.
-         Admin.id: (context) =>  Admin(),
-         FormScreen.id: (context) =>  FormScreen(),
+    Admin.id: (context) =>  Admin(),
+    FormScreen.id: (context) =>  FormScreen(),
+    CreateUser.id: (context) =>  CreateUser(),
+    SearchUser.id: (context) =>  SearchUser(),
 
   },    
   );

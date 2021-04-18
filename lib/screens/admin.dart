@@ -1,3 +1,6 @@
+import 'package:employee_byte/screens/createUser.dart';
+import 'package:employee_byte/screens/search.dart';
+import 'package:employee_byte/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 // import 'package:employee_byte/components/rounded_button.dart';
 // import 'package:employee_byte/constants.dart';
@@ -51,11 +54,9 @@ class _AdminState extends State<Admin> {
           elevation: 0.0,
         ),
         body: Container(
- 
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
           color: Colors.white,
-          child: TabBarView(
-            children: [
+          child: TabBarView(children: [
             Container(
                 padding: EdgeInsets.symmetric(horizontal: 10),
                 child: GridView.count(
@@ -63,40 +64,51 @@ class _AdminState extends State<Admin> {
                   crossAxisSpacing: 5,
                   crossAxisCount: 2,
                   children: [
-                   _buildSingleContainer(
-                     context: context,
-                     count: '',
-                     icon: Icons.person,
-                     name: 'Users'
-                   ),
-                   _buildSingleContainer(
-                     context: context,
-                     count: '',
-                     icon: Icons.person_add_alt_1_rounded,
-                     name: 'Create'
-                   ),_buildSingleContainer(
-                     context: context,
-                     count: '',
-                     icon: Icons.remove_red_eye_rounded,
-                     name: 'View'
-                   ),_buildSingleContainer(
-                     context: context,
-                     count: '',
-                     icon: Icons.search_off_rounded,
-                     name: 'Search'
-                   )
-                   ,_buildSingleContainer(
-                     context: context,
-                     count: '',
-                     icon: Icons.logout,
-                     name: 'logout'
-                   ),
-                   _buildSingleContainer(
-                     context: context,
-                     count: '',
-                     icon: Icons.pan_tool_sharp,
-                     name: 'manage'
-                   )
+                    _buildSingleContainer(
+                        context: context,
+                        count: '10',
+                        icon: Icons.person,
+                        name: 'Users'),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, CreateUser.id);
+                      },
+                      child: _buildSingleContainer(
+                          context: context,
+                          count: '',
+                          icon: Icons.person_add_alt_1_rounded,
+                          name: 'Create'),
+                    ),
+                    _buildSingleContainer(
+                        context: context,
+                        count: '',
+                        icon: Icons.remove_red_eye_rounded,
+                        name: 'View'),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, SearchUser.id);
+                      },
+                      child: _buildSingleContainer(
+                          context: context,
+                          count: '',
+                          icon: Icons.search_off_rounded,
+                          name: 'Search'),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, WelcomeScreen.id);
+                      },
+                                          child: _buildSingleContainer(
+                          context: context,
+                          count: '',
+                          icon: Icons.logout,
+                          name: 'logout'),
+                    ),
+                    _buildSingleContainer(
+                        context: context,
+                        count: '',
+                        icon: Icons.pan_tool_sharp,
+                        name: 'manage')
                   ],
                 )),
             Container(
